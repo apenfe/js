@@ -25,3 +25,4 @@ console.log(parseFloat(flotante_falso));
 
 String(numero_entero); // para convertir a string
 
+console.log(typeof(cadena_texto)); // para ver el tipo de dato
