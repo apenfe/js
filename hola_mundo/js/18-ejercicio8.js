@@ -19,7 +19,7 @@ while(true){
 
     }else{
 
-        alert("+: "+(num1+num2)+"\n, -: "+(num1-num2)+"\n, *: "+(num1*num2)+"\n, /: "+(num1/num2));
+        alert("+: "+(num1+num2)+"\n -: "+(num1-num2)+"\n *: "+(num1*num2)+"\n /: "+(num1/num2));
         document.write("<h1>De "+num1+" a "+num2+" estas son las operaciones: </h1><br/>");
         document.write("<h2>Suma: " + num1 + " + " + num2 + " = " + (num1+num2) + "</h2><br/>");
         document.write("<h2>Resta: " + num1 + " - " + num2 + " = " + (num1-num2) + "</h2><br/>");
