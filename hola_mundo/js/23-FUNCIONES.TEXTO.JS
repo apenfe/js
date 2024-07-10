@@ -46,3 +46,15 @@ console.log(empiezaPor);
 
 var incluye = texto.includes("javascript");
 console.log(incluye);
+
+var reemplazo = texto.replace("javascript","python");
+console.log(reemplazo);
+
+var cortePorIndice = texto.slice(15);
+console.log(cortePorIndice);
+
+var split = texto.split(" ");
+console.log(split);
+
+var trim = texto.trim();
+console.log(trim);
