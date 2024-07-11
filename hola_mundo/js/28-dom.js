@@ -48,3 +48,22 @@ for(let valor in todosLosDivs){
 seccion.append(hr);
 
 // conseguir elementos por su clase
+
+var divsRojos = document.getElementsByClassName('rojo');
+var divsAmarillos = document.getElementsByClassName('amarillo');
+
+divsAmarillos[0].style.background="yellow";
+
+for(let indice in divsRojos){
+
+    if(divsRojos[indice].className=="rojo"){
+        divsRojos[indice].style.background="red";
+    }
+
+}
+
+// query selector
+
+var encabezado = document.querySelector("#encabezado"); // recomendable solo para un id
+console.log(encabezado.textContent);
+
