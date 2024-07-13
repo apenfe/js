@@ -24,6 +24,9 @@ getUsuarios()
 
     mostrarErvin(user);
 
+}).catch(error => {
+    console.log(error);
+    alert("error al realizar la peticion.")
 });
 
 function getUsuarios(){
