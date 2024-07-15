@@ -30,4 +30,19 @@ $(document).ready(function(){
        // $(".caja_efectos").effect("explode");
     });
 
+
+    // tooltip
+    $(document).tooltip();
+
+    // dialog
+    $('#lanzar-popup').click(function(){
+        $('#popup').dialog();
+    });
+
+    // datepicker
+    $('#calendario').datepicker();
+
+    // tabs
+    $('#pestanas').tabs();
+
 });
