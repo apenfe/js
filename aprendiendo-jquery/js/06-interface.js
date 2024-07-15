@@ -24,4 +24,10 @@ $(document).ready(function(){
         }
     });
 
+    // efectos
+    $('#mostrar').click(function(){
+        $(".caja_efectos").toggle("fade",2000); // blink, slide, drop, fold, puff, scale, shake
+       // $(".caja_efectos").effect("explode");
+    });
+
 });
