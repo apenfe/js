@@ -26,7 +26,36 @@ $(document).ready(function(){
 
     $('#todoenuno').click(function(){
 
-        caja.toggle('fast');
+        caja.fadeToggle('fast'); // toggle, slideToggle
+
+    });
+
+    $('#animar').click(function(){
+
+        caja.animate(
+                {
+                    marginLeft:'300px',
+                    fontSize:'40px',
+                    height: '100px'
+                
+                },'slow')
+            .animate(
+                {
+                    borderRadius:'900px',
+                    marginTop:'100px'
+                },'normal')
+            .animate(
+                {
+                    borderRadius:'100px',
+                    marginLeft:'0px',
+                    marginTop: '0px'
+                },'normal')
+            .animate(
+                {
+                    marginLeft:'300px',
+                    fontSize:'40px',
+                    height: '100px'
+                },'slow');
 
     });
 
