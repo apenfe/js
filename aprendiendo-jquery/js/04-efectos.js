@@ -15,6 +15,7 @@ $(document).ready(function(){
     });
 
     ocultar.click(function(){
+
         ocultar.hide();
         mostrar.show();
 
@@ -26,7 +27,9 @@ $(document).ready(function(){
 
     $('#todoenuno').click(function(){
 
-        caja.fadeToggle('fast'); // toggle, slideToggle
+        caja.fadeToggle('slow', function(){
+            console.log("cartel ocultado");
+        }); // toggle, slideToggle
 
     });
 
