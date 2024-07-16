@@ -21,11 +21,13 @@
         <header id="header">
 
             <div id="logo">
-                Proyecto JS
+                <h1>Proyecto JS</h1>
             </div>
 
-            <nav>
-                <ul id="menu">
+            <div class="clearfix"></div>
+
+            <nav id="menu">
+                <ul>
                     <li><a href="#">INICIO</a></li>
                     <li><a href="#">SOBRE MI</a></li>
                     <li><a href="#">RELOJ</a></li>
@@ -53,7 +55,7 @@
 
                 <article class="post">
                     <h2>Titulo del articulo</h2>
-                    <span>Fecha publicacion</span>
+                    <span class="date">Fecha publicacion</span>
                     <p>
                         Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum
                         ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N.
@@ -64,11 +66,12 @@
                         cuales contenian pasajes de Lorem Ipsum, y más recientemente con software de autoedición, como
                         por ejemplo Aldus PageMaker, el cual incluye versiones de Lorem Ipsum.
                     </p>
+                    <a href="#" class="button-more">Leer más</a>
                 </article>
 
                 <article class="post">
                     <h2>Titulo del articulo</h2>
-                    <span>Fecha publicacion</span>
+                    <span class="date">Fecha publicacion</span>
                     <p>
                         Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum
                         ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N.
@@ -79,15 +82,43 @@
                         cuales contenian pasajes de Lorem Ipsum, y más recientemente con software de autoedición, como
                         por ejemplo Aldus PageMaker, el cual incluye versiones de Lorem Ipsum.
                     </p>
+                    <a href="#" class="button-more">Leer más</a>
                 </article>
 
             </div>
 
-            <aside id="aside">
+            <aside id="sidebar">
+
+                <div id="about">
+                    <h4><span>¿Quien soy?</span></h4>
+                    <img src="img/caracol.jpg" />
+                    <p>Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum
+                        ha sido el texto de relleno estándar de las industrias desd</p>
+                </div>
+
+                <div id="login">
+                    <h4><span>Identificate</span></h4>
+                    <form>
+
+                        <label for="name">Nombre</label>
+                        <input type="text" id="name" name="name"/>
+
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email"/>
+
+                        <label for="password">Contraseña</label>
+                        <input type="password" id="password" name="password"/>
+
+                        <input type="submit" value="Entrar"/>
+
+                    </form>
+                </div>
 
             </aside>
 
         </section>
+
+        <div class="clearfix"></div>
 
         <!-- FIN CONTENIDO -->
 

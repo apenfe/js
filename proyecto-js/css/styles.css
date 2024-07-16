@@ -1,4 +1,188 @@
 *{
     margin: 0px;
     padding: 0px;
+    list-style: none;
+}
+
+.clearfix{
+    float: none;
+    clear: both;
+}
+
+body{
+    background: url(../img/hojas.jpg);
+    background-attachment: fixed;
+}
+
+#global{
+    width: 65%;
+    margin: 0px auto;
+    margin-top: 30px;
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0px 0px 4px gray;
+}
+
+#logo{
+    display: block;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 30px;
+    letter-spacing: 4px;
+    background-color: #235e3d;
+    color: white;
+    text-align: center;
+    width: 385px;
+    height: 80px;
+    line-height: 80px;
+    float: left;
+    margin-bottom: 20px;
+}
+
+#menu{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #333;
+    width: 100%;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+#menu ul{
+    line-height: 46px;
+    list-style: none;
+}
+
+#menu ul li{
+    display: inline-block;
+    height: 46px;
+    transition: all 300ms;
+}
+
+#menu ul li:hover{
+    background-color: #235e3d;
+}
+
+#menu a{
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+#content{
+    margin: 0px auto;
+    width: 95%;
+}
+
+#posts{
+    width: 60%;
+    float: left;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.post{
+    padding: 7px;
+}
+
+.post h2{
+    font-size: 30px;
+    color: #333;
+}
+
+.post .date{
+    display: block;
+    color: gray;
+    margin-top: 5px;
+}
+
+.post p{
+    text-align: justify;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    line-height: 22px;
+}
+
+.post .button-more{
+    padding: 15px;
+    display: block;
+    font-size: 14px;
+    text-align: center;
+    background-color: #235e3d;
+    text-decoration: none;
+    text-align: center;
+    width: 70px;
+    color: white;
+    cursor: pointer;
+    border: 1px solid #333;
+    box-shadow: 0px 0px 2px #333 inset;
+    border-radius: 5px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+#sidebar{
+    width: 31%;
+    float: right;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#sidebar h4{
+    margin-top: 50px;
+    margin-bottom: 20px;
+    text-align: center;
+    line-height: 10px;
+    color: #333;
+    background: url(../img/lines.png) repeat-x;
+}
+
+#sidebar h4 span{
+    background-color: white;
+    padding: 5px;
+}
+
+#sidebar img{
+    width: 100%;
+}
+
+#sidebar p{
+    font-size: 15px;
+    text-align: justify;
+}
+
+form{
+    margin: 0px auto;
+    width: 90%;
+}
+
+form input[type="text"],
+form input[type="password"],
+form input[type="email"]{
+    padding: 5px;
+    border-radius: 5px;
+    border: 2px solid #ccc;
+    width: 80%;
+    margin-bottom: 10px;
+    box-shadow: 0px 0px 2px gray;
+    margin-top: 5px;
+}
+
+form input[type="submit"]{
+    background-color: #eee;
+    padding: 10px;
+    border: 1px solid gray;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+footer{
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    height: 47px;
+    background-color: rgba(51,51,51,0.7);
+    margin: 0px auto;
+    width: 65%;
+    padding-left: 20px;
+    padding-right: 20px;
+    text-align: center;
+    line-height: 47px;
 }
