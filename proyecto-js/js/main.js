@@ -81,4 +81,20 @@ $(document).ready(function () {
 
     });
 
+    // selector de tema
+
+    var tema = $('#theme');
+
+    $('#to-green').click(function(){
+        tema.attr("href",'css/green.css');
+    });
+
+    $('#to-red').click(function(){
+        tema.attr("href",'css/red.css');
+    });
+
+    $('#to-blue').click(function(){
+        tema.attr("href",'css/blue.css');
+    });
+
 });
