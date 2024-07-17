@@ -115,7 +115,46 @@ $(document).ready(function () {
         }, 500);
 
         return false;
-        
+
+    });
+
+    // guardar la info del usuario
+
+    $('#login form').submit(function(){
+
+        var nombre = $('#name').val();
+        var email = $('#email').val();
+        var pass = $('#password').val();
+
+        localStorage.setItem("name",nombre);
+        localStorage.setItem("email", email);
+        localStorage.setItem("password", pass);
+
+    });
+
+    var form_name = localStorage.getItem("name");
+
+    if(form_name){
+
+        var descripcion = $('#about p');
+        descripcion.html("<br/><strong>Bienvenido: "+form_name+"</strong>");
+        descripcion.append('<br><a href="#" id="logout">Cerrar Sesión</a>')
+        $('#login').hide();
+
+    }else{
+        descripcion.html("")
+    }
+
+    $('#logout').click(function(e){
+
+        e.preventDefault();
+        localStorage.clear();
+        var log = $('#login');
+        log.show();
+        $(this).hide();
+        $('#about p').html("")
+
+
     });
 
 });
