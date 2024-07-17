@@ -75,8 +75,6 @@ $(document).ready(function () {
                     <a href="#" class="button-more">Leer más</a>
                 </article>`;
 
-        console.log(post);
-
         contenido.append(post);
 
     });
@@ -85,16 +83,39 @@ $(document).ready(function () {
 
     var tema = $('#theme');
 
+    var storedTheme = localStorage.getItem("tema");
+
+    if (storedTheme) {
+        tema.attr("href", storedTheme);
+    }
+
     $('#to-green').click(function(){
         tema.attr("href",'css/green.css');
+        localStorage.setItem("tema","css/green.css");
     });
 
     $('#to-red').click(function(){
         tema.attr("href",'css/red.css');
+        localStorage.setItem("tema",'css/red.css');
     });
 
     $('#to-blue').click(function(){
         tema.attr("href",'css/blue.css');
+        localStorage.setItem("tema",'css/blue.css');
+    });
+
+    // scroll hacia arriba de la web
+
+    $('.subir').click(function(e){
+
+        e.preventDefault();
+
+        $('html, body').animate({
+            scrollTop: 0
+        }, 500);
+
+        return false;
+        
     });
 
 });
