@@ -18,9 +18,13 @@
     <link rel="stylesheet" href="js/jquery-ui-1.13.3/jquery-ui.theme.min.css" />
     <script type="text/javascript" src="js/jquery-ui-1.13.3/jquery-ui.min.js"></script>
 
+    <!-- Plugin validacion -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.3.26/jquery.form-validator.min.js"></script>
+
     <!-- MIS SCRIPTS -->
     <script src="js/main.js"></script>
-    <script src="js/about.js"></script>
+    <script src="js/contact.js"></script>
     
 
 </head>
@@ -68,28 +72,28 @@
 
                 <!-- CARGAR FORMULARIO -->
                 <h2>Contacto</h2>
-                <form>
+                <form action="" method="POST" id="form_contact">
 
                     <label for="name">Nombre</label>
-                    <input type="text" name="name">
+                    <input type="text" name="name" data-validation="alphanumeric">
 
                     <label for="surname">Apellidos</label>
-                    <input type="text" name="surname">
+                    <input type="text" name="surname" data-validation="alphanumeric">
 
                     <label for="email">Email</label>
-                    <input type="email" name="email">
+                    <input type="email" name="email" data-validation="email">
 
                     <label for="sex">Sexo</label>
-                    <select name="sex">
+                    <select name="sex" data-validation="required">
                         <option value="man">Hombre</option>
                         <option value="woman">Mujer</option>
                     </select>
 
                     <label for="date">Fecha Nacimiento</label>
-                    <input type="text" name="date">
+                    <input type="text" name="date" data-validation="date" data-validation-format="dd-mm-yyyy">
 
                     <label for="years">Edad</label>
-                    <input type="number" name="years">
+                    <input type="number" name="years" data-validation="number">
 
                     <input type="submit" value="Enviar">
                     
