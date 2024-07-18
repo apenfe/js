@@ -165,19 +165,4 @@ $(document).ready(function () {
 
     });
 
-    // acordeon
-
-    if(window.location.href.indexOf('about') > -1){
-        $( function() {
-            $( "#accordion" ).accordion();
-          } );
-    }
-
 });
-
-
-if(window.location.href.indexOf('about') > -1){
-    $( function() {
-        $( "#accordion" ).accordion();
-    });
-}
