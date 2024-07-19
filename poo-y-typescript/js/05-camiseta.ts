@@ -5,8 +5,18 @@ interface camisetaBase{
     getColor();
 }
 
-// clase (molde)
+// Decorador 
 
+function estampar(logo: string){
+    return function(target: Function){
+        target.prototype.estampacion = function(): void{
+            console.log("Camiseta estampada con el logo de: "+logo);
+        }
+    }
+}
+
+// clase (molde)
+@estampar('gucci')
 class camiseta implements camisetaBase{
 
     // propiedades / atributos
@@ -91,6 +101,8 @@ miCamiseta.setColor("rojo");
 miCamiseta.setModelo("generica");
 miCamiseta.setMarca("nike");
 miCamiseta.setPrecio(25);
+
+(miCamiseta as any).estampacion();
 
 console.log(miCamiseta);
 

@@ -14,42 +14,103 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
-// clase (molde)
-var camiseta = /** @class */ (function () {
-    // constructor
-    function camiseta(color, modelo, marca, precio) {
-        this.color = color;
-        this.modelo = modelo;
-        this.marca = marca;
-        this.precio = precio;
+var __esDecorate = (this && this.__esDecorate) || function (ctor, descriptorIn, decorators, contextIn, initializers, extraInitializers) {
+    function accept(f) { if (f !== void 0 && typeof f !== "function") throw new TypeError("Function expected"); return f; }
+    var kind = contextIn.kind, key = kind === "getter" ? "get" : kind === "setter" ? "set" : "value";
+    var target = !descriptorIn && ctor ? contextIn["static"] ? ctor : ctor.prototype : null;
+    var descriptor = descriptorIn || (target ? Object.getOwnPropertyDescriptor(target, contextIn.name) : {});
+    var _, done = false;
+    for (var i = decorators.length - 1; i >= 0; i--) {
+        var context = {};
+        for (var p in contextIn) context[p] = p === "access" ? {} : contextIn[p];
+        for (var p in contextIn.access) context.access[p] = contextIn.access[p];
+        context.addInitializer = function (f) { if (done) throw new TypeError("Cannot add initializers after decoration has completed"); extraInitializers.push(accept(f || null)); };
+        var result = (0, decorators[i])(kind === "accessor" ? { get: descriptor.get, set: descriptor.set } : descriptor[key], context);
+        if (kind === "accessor") {
+            if (result === void 0) continue;
+            if (result === null || typeof result !== "object") throw new TypeError("Object expected");
+            if (_ = accept(result.get)) descriptor.get = _;
+            if (_ = accept(result.set)) descriptor.set = _;
+            if (_ = accept(result.init)) initializers.unshift(_);
+        }
+        else if (_ = accept(result)) {
+            if (kind === "field") initializers.unshift(_);
+            else descriptor[key] = _;
+        }
     }
-    // metodos / funciones
-    camiseta.prototype.setColor = function (color) {
-        this.color = color;
+    if (target) Object.defineProperty(target, contextIn.name, descriptor);
+    done = true;
+};
+var __runInitializers = (this && this.__runInitializers) || function (thisArg, initializers, value) {
+    var useValue = arguments.length > 2;
+    for (var i = 0; i < initializers.length; i++) {
+        value = useValue ? initializers[i].call(thisArg, value) : initializers[i].call(thisArg);
+    }
+    return useValue ? value : void 0;
+};
+var __setFunctionName = (this && this.__setFunctionName) || function (f, name, prefix) {
+    if (typeof name === "symbol") name = name.description ? "[".concat(name.description, "]") : "";
+    return Object.defineProperty(f, "name", { configurable: true, value: prefix ? "".concat(prefix, " ", name) : name });
+};
+// Decorador 
+function estampar(logo) {
+    return function (target) {
+        target.prototype.estampacion = function () {
+            console.log("Camiseta estampada con el logo de: " + logo);
+        };
     };
-    camiseta.prototype.setModelo = function (modelo) {
-        this.modelo = modelo;
-    };
-    camiseta.prototype.setMarca = function (marca) {
-        this.marca = marca;
-    };
-    camiseta.prototype.setPrecio = function (precio) {
-        this.precio = precio;
-    };
-    camiseta.prototype.getColor = function () {
-        return this.color;
-    };
-    camiseta.prototype.getModelo = function () {
-        return this.modelo;
-    };
-    camiseta.prototype.getMarca = function () {
-        return this.marca;
-    };
-    camiseta.prototype.getPrecio = function () {
-        return this.precio;
-    };
-    return camiseta;
-}());
+}
+// clase (molde)
+var camiseta = function () {
+    var _classDecorators = [estampar('gucci')];
+    var _classDescriptor;
+    var _classExtraInitializers = [];
+    var _classThis;
+    var camiseta = _classThis = /** @class */ (function () {
+        // constructor
+        function camiseta_1(color, modelo, marca, precio) {
+            this.color = color;
+            this.modelo = modelo;
+            this.marca = marca;
+            this.precio = precio;
+        }
+        // metodos / funciones
+        camiseta_1.prototype.setColor = function (color) {
+            this.color = color;
+        };
+        camiseta_1.prototype.setModelo = function (modelo) {
+            this.modelo = modelo;
+        };
+        camiseta_1.prototype.setMarca = function (marca) {
+            this.marca = marca;
+        };
+        camiseta_1.prototype.setPrecio = function (precio) {
+            this.precio = precio;
+        };
+        camiseta_1.prototype.getColor = function () {
+            return this.color;
+        };
+        camiseta_1.prototype.getModelo = function () {
+            return this.modelo;
+        };
+        camiseta_1.prototype.getMarca = function () {
+            return this.marca;
+        };
+        camiseta_1.prototype.getPrecio = function () {
+            return this.precio;
+        };
+        return camiseta_1;
+    }());
+    __setFunctionName(_classThis, "camiseta");
+    (function () {
+        var _metadata = typeof Symbol === "function" && Symbol.metadata ? Object.create(null) : void 0;
+        __esDecorate(null, _classDescriptor = { value: _classThis }, _classDecorators, { kind: "class", name: _classThis.name, metadata: _metadata }, null, _classExtraInitializers);
+        camiseta = _classThis = _classDescriptor.value;
+        if (_metadata) Object.defineProperty(_classThis, Symbol.metadata, { enumerable: true, configurable: true, writable: true, value: _metadata });
+        __runInitializers(_classThis, _classExtraInitializers);
+    })();
+    return camiseta = _classThis;
+}();
 // clase hija
 var Sudadera = /** @class */ (function (_super) {
     __extends(Sudadera, _super);
@@ -75,6 +136,7 @@ miCamiseta.setColor("rojo");
 miCamiseta.setModelo("generica");
 miCamiseta.setMarca("nike");
 miCamiseta.setPrecio(25);
+miCamiseta.estampacion();
 console.log(miCamiseta);
 var sudadera = new Sudadera(true);
 sudadera.setCapucha(true);
