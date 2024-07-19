@@ -1,6 +1,6 @@
 
 // string
-var cadena: string = "Adrian Peñalver";
+var cadena: string | number = "Adrian Peñalver"; // con la tuberia puedo poner esos dos tipos
 
 // number
 
@@ -23,3 +23,9 @@ cualquiera = 3;
 var lenguajes: Array<string> = ["PHP","Laravel"];
 
 console.log(cadena,numero,verdadero_falso,cualquiera);
+
+// tipos de datos personalizados
+
+type letrasobooleanos = string | boolean;
+
+var mio: letrasobooleanos = true;

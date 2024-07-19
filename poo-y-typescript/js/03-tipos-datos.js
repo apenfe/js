@@ -1,5 +1,5 @@
 // string
-var cadena = "Adrian Peñalver";
+var cadena = "Adrian Peñalver"; // con la tuberia puedo poner esos dos tipos
 // number
 var numero = 12;
 // boleano
@@ -11,3 +11,4 @@ cualquiera = 3;
 // arrays
 var lenguajes = ["PHP", "Laravel"];
 console.log(cadena, numero, verdadero_falso, cualquiera);
+var mio = true;
