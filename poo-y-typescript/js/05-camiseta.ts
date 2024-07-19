@@ -1,6 +1,13 @@
+// interfaz
+
+interface camisetaBase{
+    setColor(color);
+    getColor();
+}
+
 // clase (molde)
 
-export class camiseta{
+class camiseta implements camisetaBase{
 
     // propiedades / atributos
 
@@ -52,6 +59,27 @@ export class camiseta{
 
 }
 
+// clase hija
+
+class Sudadera extends camiseta{
+
+    public capucha: boolean;
+
+    constructor(capucha){
+        super("null","null","null",0);
+        this.capucha = capucha;
+    }
+
+    public setCapucha(capucha){
+        this.capucha=capucha;
+    }
+
+    public getCapucha(): boolean{
+        return this.capucha;
+    }
+
+}
+
 var miCamiseta = new camiseta("azul","short","adidas",45);
 
 console.log(miCamiseta.getColor());
@@ -65,3 +93,7 @@ miCamiseta.setMarca("nike");
 miCamiseta.setPrecio(25);
 
 console.log(miCamiseta);
+
+var sudadera = new Sudadera(true);
+sudadera.setCapucha(true);
+console.log(sudadera);
