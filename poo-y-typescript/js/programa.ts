@@ -1,3 +1,32 @@
+// tsc -w *.ts
+
+module Tienda{
+
+    export class Ropa{
+        constructor(public titulo: string){
+            alert(titulo);
+        }
+    }
+
+    export class Informatica{
+        constructor(public titulo: string){
+            alert("Tienda de tecnología: "+titulo);
+        }
+    }
+}
+
+import Informatica = Tienda.Informatica;
+let cargar_informatica = new Informatica("pc componentes");
+
+function arranque(lanzar: string){
+    return function(target: Function){
+        target.prototype.lanzamiento = function(): void{
+            console.log(lanzar);
+        }
+    }
+}
+
+@arranque("Lanzamiento del curso de nodejs")
 class Programa{
 
     public nombre: string;
@@ -20,6 +49,10 @@ class Programa{
     }
 
 }
+
+var program = new Programa();
+
+(program as any).lanzamiento();
 
 class EditorVideo extends Programa{
 
