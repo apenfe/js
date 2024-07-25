@@ -9,6 +9,7 @@ el mensaje "Alerta, intruso"
 */
 
 var password = "123456";
+var i = 0;
 
 while(true){
 
@@ -18,6 +19,12 @@ while(true){
         console.log("Puedes pasar");
     }else{
         console.log("NO Puedes pasar");
+        i++;
+    }
+
+    if(i==3){
+        console.log("Alerta intruso");
+        break;
     }
 
 }
