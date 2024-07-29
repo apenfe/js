@@ -1,0 +1,312 @@
+<!doctype HTML>
+
+<html lang="es">
+
+    <head>
+
+        <meta charset="utf-8">
+        <title>Muestra 1 para ejercicios dhtml</title>
+        <style>
+
+            .boton{
+                border: 1px solid black;
+                padding: 2px 10px;
+                background: rgba(27,109,236,0.61);
+                color: white;
+                font-family: Arial, sans-seriff;
+                width: fit-content;
+                display: inline-block;
+                cursor: pointer;
+            }
+            .paneles{
+                display:flex;
+                justify-content: center;
+                margin-top: 32px;
+            }    
+            .paneles figure{
+                width: 75px;
+                cursor: pointer;
+            }
+            .activo{
+                color: blue;
+                font-family: Arial, "sans-serif";
+            }
+            .destacar{
+                font-size: 18px;
+                color:red;
+            }
+            .carrusel{
+                text-align: center;
+                background: #727c331a;
+                border:1px solid black;
+                width: fit-content;
+                margin: 24px auto;
+                width: 100px;
+                padding: 24px;
+                cursor: pointer;
+            }
+            
+        </style>
+
+    </head>
+
+    <body>
+
+        <section class="botones">
+            <div onclick="toggle()" class="boton">Abrir - cerrar</div>
+            <div onclick="cambiar()" class="boton">Cambiar título</div>
+            <div onclick="crearDiv()" class="boton">Crear bloque</div>
+            <div onclick="borrarDiv()" class="boton">Borrar bloque</div>
+            <div onclick="fuentesImg()" class="boton">Fuentes</div>
+            <div onclick="intercalar()" class="boton">Subtitulo</div>
+        </section>  
+
+        <header>
+            <h1 id="titular" onclick="toggleClase()">Hola Mundo</h1>
+        </header>
+
+        <div id="subtitulo" style="text-align:center">
+            Página de muestra de javascript dhtml
+        </div>
+
+        <div class="paneles">
+            <figure onclick="ponerPie(this)">
+                <img src="img/uno.png" width="33" height="75" alt="Número 1"/>
+                <figcaption></figcaption>
+            </figure>
+            <figure onclick="ponerPie(this)">
+                <img src="img/dos.png" width="50" height="75" alt="Número 2"/>
+                <figcaption></figcaption>
+            </figure>
+            <figure onclick="ponerPie(this)">
+                <img src="img/tres.png" width="49" height="75" alt="Número 3"/>
+                <figcaption></figcaption>
+            </figure>    
+        </div> 
+          
+        <div id="fuentes" ></div>
+
+        <div  class="carrusel" data-img="0" onclick="cambiaImg()">
+            <img src="img/uno.png" alt="Diapositivas" id="diapo">
+        </div>   
+
+        <!-- inicio de las funciones javascript pedidas en los ejercicios -->
+
+        <script>
+            function cambiar(){
+
+                /*
+                    En la página web modelo ves que tienes un titular Hola Mundo. Se trata de añadir 
+                    una función javascript para que al pulsar el botón cambiar este título se convierta 
+                    en Hola Mundo con Javascript . El unico cambio necesario es el bloque con el texto cambiar 
+                    y completar la función cambiar() que aparece en el código de la página.
+                */
+
+                let titular = document.querySelector('#titular');
+                titular.innerHTML = 'Hola mundo con JavaScript';
+
+                /*
+                    Tienes la página web modelo que debe cambiar el color del titular del negro actual a rojo y 
+                    además debe quedar centrado. El único cambio será en el bloque cambiar y el código de 
+                    función cambiar()
+                */
+
+                titular.style.color = 'red';
+                titular.style.textAlign = 'center';
+
+            }
+
+            function crearDiv(){
+
+                /*
+                    Escribe un script de nombre creaDiv() que crea un nuevo bloque div en la página modelo. 
+                    El bloque se creará al pulsar el botón con texto Crear, sus colores serán texto blanco con 
+                    fondo rojo y el texto quedará centrado. Este texto consiste en la cadena Javascript permite 
+                    crear páginas dinámicas.
+                */
+
+                let header = document.querySelector('header');
+                let div = document.createElement('div');
+                div.style.background = 'red';
+                div.style.color = 'white';
+                div.style.textAlign = 'center'
+                div.innerHTML = "<h2>JavaScript permite crear paginas dinamicas</h2>"
+
+                header.append(div);
+
+            }
+
+            function borrarDiv(){
+
+                /*
+                    En la página web modelo debes lograr que al pulsar el botón con el texto borrar se deberá 
+                    eliminar el bloque que aparece bajo el titular, no ocultar, sino borrarlo. Para detalles 
+                    mira el código fuente de la página. Solo tienes que escribir el código de la función borrar()
+                */
+
+                let borrar = document.querySelector('#subtitulo');
+                
+                if(borrar != null){
+
+                    document.body.removeChild(borrar);
+
+                }
+
+            }
+
+            function ponerPie(fig){
+
+                /*
+                    La página web modelo contiene tres imágenes. Cada imagen está en un bloque figure con un 
+                    elemento figcaption para un pie de foto. Al pulsar sobre cualquier imagen se debe mostar 
+                    su atributo alt en su pie de foto. Si el pie ya está relleno se borrará su contenido y no 
+                    se escribirá nada.
+                */
+
+                let pie = fig.querySelector('figcaption');
+                let img = fig.querySelector('img');
+
+                if(pie.innerText == ""){
+                    pie.innerText = img.getAttribute('alt');
+                }else{
+                    pie.innerText = ""; 
+                }
+
+            }
+
+            function fuentesImg(){
+
+                /*
+                    En este script debes leer todos los elementos tipo imagen de la página y mostrar sus 
+                    urls en un bloque tipo div cuyo id es fuentes y que ya existe en la página modelo usada 
+                    para estos ejercicios. El script se ejecutará al pulsar el botón con el texto fuentes
+                */
+
+                let fuentes = document.querySelector('#fuentes');
+                fuentes.style.textAlign = 'center';
+                let urls = document.querySelectorAll('img');
+
+                for (let i = 0; i < urls.length; i++) {
+                    
+                    let texto = document.createTextNode(urls[i].getAttribute('src'));
+                    let salto = document.createElement('br');
+
+                    fuentes.appendChild(texto);
+                    fuentes.appendChild(salto);
+                }
+
+            }  
+
+            function toggleClase(){
+
+                /*
+                    El script que tienes que crear en la página modelo debe cambiar la clase 
+                    del elemento que contiene al encabezado de la página. Al pulsar sobre el 
+                    titular se añadirá o se eliminarás (toggle) la clase de nombre activo
+                */
+
+                var encabezado = document.querySelector('#titular');
+                encabezado.classList.toggle('activo');
+
+            }
+
+            function intercalar(){
+
+                /*
+                    Escribe el código de una función nuevoBloque() que deberá crear un nuevo 
+                    elemento div, con una class de nombre destacar. El bloque contendrá, en 
+                    negrita, el texto Página Modelo. Este bloque debe aparecer justo antes del 
+                    bloque subtitulo es decir justo después del titular de la página. Se activará 
+                    con el botón superior que contiene el texto Subtitulo
+                */
+
+                let div = nuevoBloque();
+                let encabezado = document.querySelector('header');
+
+                encabezado.append(div);
+               
+            }
+
+            function nuevoBloque(){
+
+                let nuevo_div = document.createElement('div');
+                nuevo_div.classList.toggle('destacar');
+                nuevo_div.innerHTML = 'Subtitulo';
+
+                return nuevo_div;
+            }
+                
+            function cambiaImg(){
+
+                /*
+                    En la página modelo tienes un elemento div con un imagen en su interior. 
+                    Cada vez que hagas click con el ratón sobre el la imagen cambiará.
+
+                    El bloque tiene como clase carrousel. Dispones de tres imágenes: 
+                    uno.png, dos.png y tres.png. Se deberán ir sucediendo en forma circular, 
+                    despues de la última vuelve a la primera
+                    
+                    El bloque posee un atributo data-set que almacena el nombre de la imagen 
+                    visible en cada momento.
+
+                    <div  class="carrusel" data-img="0" onclick="cambiaImg()">
+                        <img src="img/uno.png" alt="Diapositivas" id="diapo">
+                    </div> 
+                */
+
+                let images = ['img/uno.png','img/dos.png','img/tres.png'];
+
+                let carrousel = document.querySelector(".carrusel");
+                let imagenActual = carrousel.getAttribute('data-img');
+
+                let imagen = document.querySelector(".carrusel img");
+
+                if(imagenActual==images.length){
+                    imagenActual=0;
+                }
+
+                imagen.setAttribute('src',images[imagenActual++]);
+                carrousel.setAttribute('data-img',imagenActual++);
+
+            }
+
+            function toggle(){
+
+                /*
+                    El primer botón de la barra de botones en la parte superior de la página tiene 
+                    el texto abrir/cerrar. Al pulsarlo se deben ocultar o mostrar los botones restantes, 
+                    pero el de abrir/cerrrar debe quedar visible.
+
+                    <section class="botones">
+                        <div onclick="toggle()" class="boton">Abrir - cerrar</div>
+                        <div onclick="cambiar()" class="boton">Cambiar título</div>
+                        <div onclick="crearDiv()" class="boton">Crear bloque</div>
+                        <div onclick="borrarDiv()" class="boton">Borrar bloque</div>
+                        <div onclick="fuentesImg()" class="boton">Fuentes</div>
+                        <div onclick="intercalar()" class="boton">Subtitulo</div>
+                    </section>  
+                */
+
+                let botones = document.querySelectorAll('.botones div');
+
+                if(botones[1].style.display == 'none'){
+
+                    for(let i=1; i<botones.length; i++){
+                        botones[i].style.display = 'inline-block';
+                    }
+                }else{
+
+                    for(let i=1; i<botones.length; i++){
+                        botones[i].style.display = 'none';
+                    }
+
+                }
+
+
+            }
+
+        </script> 
+
+    </body>
+
+</html>
