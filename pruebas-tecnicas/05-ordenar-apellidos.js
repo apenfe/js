@@ -28,8 +28,34 @@ var ordenarPorApellidos = [
     "Sylvester Stallone"
 ];  
 
-function ordenarApellidos(){
+function ordenarApellidos(personas){
 
+    // crear variable con nuevo array de apellidos
+
+    var apellidos = personas.map(persona => persona.split(" ")[1]);
+
+    // ordeno apellidos
+
+    apellidos.sort();
+
+    // uno nombre a los apellidos
+
+    var orden = apellidos.map(apellido => {
+
+        for(let i = 0; i<personas.length; i++){
+
+            if(apellido == personas[i].split(" ")[1]){
+
+                return personas[i].split(" ")[0] +" "+apellido;
+
+            }
+
+        }
+
+    });
+   
+
+    return orden;
 
 }
 
