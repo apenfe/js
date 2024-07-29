@@ -30,4 +30,4 @@ function generarLetraDNI(num){
 
 }
 
-console.log(generarLetraDNI('48654484'));
+console.log(generarLetraDNI('48644483'));
