@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+    <head>
+
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Eventos</title>
+        <script type="text/javascript" src="02-efecto.js"></script>
+        <script type="text/javascript" src="01-alert.js"></script>
+    
+
+        <style>
+            #alert{
+                margin: 0px auto;
+                width: 10%;
+                background-color: aqua;
+                text-align: center;
+                cursor: pointer;
+            }
+            #pasa{
+                margin: 0px auto;
+                width: 10%;
+                background-color: aqua;
+                text-align: center;
+                cursor: pointer;
+            }
+        </style>
+
+    </head>
+
+    <body>
+
+        <div id="alert" onclick="mensaje()">
+            Pulsa aqui
+        </div>
+
+        <div id="pasa" onmousemove="color()">
+            Pasa por aqui...
+        </div>
+
+        <div id="efecto">
+            Efectos del movimiento
+        </div>
+
+        <form>
+
+            <input id="precio" type="number">
+            <input id="cantidad" type="number">
+            <input type="button" id="enviar" value="Calcular">
+            <input id="total" readonly>
+
+        </form>
+        <script type="text/javascript" src="03-button.js"></script>
+    </body>
+
+</html>
