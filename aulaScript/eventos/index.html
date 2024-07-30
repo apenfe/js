@@ -9,7 +9,7 @@
         <title>Eventos</title>
         <script type="text/javascript" src="02-efecto.js"></script>
         <script type="text/javascript" src="01-alert.js"></script>
-    
+        <script type="text/javascript" src="04-cargar.js"></script>
 
         <style>
             #alert{
@@ -25,6 +25,13 @@
                 background-color: aqua;
                 text-align: center;
                 cursor: pointer;
+            }
+            .boton{
+                display:block;
+                width:100px;
+                cursor:pointer;
+                margin: 10px;
+                border:1px solid black
             }
         </style>
 
@@ -52,6 +59,17 @@
             <input id="total" readonly>
 
         </form>
+
+        <div style="display: block; width: 100px; height: 100px;" id="cuadro">
+            Cuadro que cambia al entrar el ratón
+        </div>
+
+        <br>
+
+        <div id="boton1" class="boton">Pulsar aquí</div>
+        <div id="boton2" class="boton">Pulsar aquí</div>
+            
+
         <script type="text/javascript" src="03-button.js"></script>
     </body>
 
