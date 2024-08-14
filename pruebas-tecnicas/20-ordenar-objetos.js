@@ -28,10 +28,22 @@ const usuarios = [
     { nombre: 'Jason', edad: 56}
   ];
 
-function ordenarObjetos(usuraios, campo){
+function ordenarObjetos(usurarios, campo){
+
+  return usurarios.sort((a,b) => {
+
+    if(typeof a[campo] == "number"){
+      return a[campo] - b[campo];
+    }
+
+    if(typeof a[campo] == "string"){
+      return a[campo].localeCompare(b[campo]);
+    }
+
+  });
 
 }
 
-var ordenados = ordenarObjetos(usuarios, "edad");
+var ordenados = ordenarObjetos(usuarios, "nombre");
 
 console.log(ordenados);
