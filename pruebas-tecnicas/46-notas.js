@@ -1,0 +1,37 @@
+/*
+ 
+Enunciado Ejercicio 46:
+Crea una función a la que le pasemos una nota y nos de una calificación:
+ 
+0-3: Deficiente
+3-5: Insuficiente
+5-6: Suficiente
+6-7: Bien
+7-9: Notable
+9-10: Sobresaliente
+ 
+Ejemplos:
+calificar(8.2) // Notable
+*/
+
+function calificar(nota){
+
+    if(nota >= 0 && nota <3){
+        return "Deficiente";
+    }else if(nota >= 3 && nota <5){
+        return "Insuficiente";
+    }else if(nota >= 5 && nota <6){
+        return "Suficiente";
+    }else if(nota >= 6 && nota <7){
+        return "Bien";
+    }else if(nota >= 7 && nota <9){
+        return "Notable";
+    }else if(nota >= 9 && nota <=10){
+        return "Sobresaliente";
+    }
+
+}
+
+let resultado = calificar(8.2) // Notable
+
+console.log(resultado);
