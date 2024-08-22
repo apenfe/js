@@ -1,0 +1,14 @@
+{
+  "name": "test-para-ejercicios",
+  "version": "1.0.0",
+  "description": "test con jest para ejercicios",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "adrian penalver",
+  "license": "MIT",
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
+}
